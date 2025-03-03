@@ -34,7 +34,7 @@ class Risk:
         std_dev = np.std(stock_returns)
 
         if std_dev == 0:
-            return 0  # Avoid division by zero
+            return 0
         
         return (avg_return - risk_free_rate) / std_dev
 
