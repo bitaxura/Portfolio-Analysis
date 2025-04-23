@@ -1,6 +1,6 @@
-yfinance
-finnhub-python
-sqlite3
-python-dotenv
-matplotlib
 pandas
+numpy
+matplotlib
+finnhub-python
+yfinance
+python-dotenv
