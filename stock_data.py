@@ -26,6 +26,14 @@ def get_historical_data(symbol, start_date, end_date):
     """Downloads historical data from Yahoo Finance."""
     return yf.download(symbol, start=start_date, end=end_date)
 
+def load_data(tickers, start_date, end_date):
+    """Loads adjusted close prices for multiple tickers."""
+    data = {}
+    for ticker in tickers:
+        df = yf.download(ticker, start=start_date, end=end_date)['Adj Close']
+        data[ticker] = df
+    return pd.DataFrame(data)
+
 def plot_stock_price(symbol, start_date, end_date):
     """Plots historical closing prices."""
     historical_data = get_historical_data(symbol, start_date, end_date)
